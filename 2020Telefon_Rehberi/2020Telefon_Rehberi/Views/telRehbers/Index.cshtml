@@ -1,0 +1,54 @@
+﻿@model IEnumerable<_2020Telefon_Rehberi.Models.telRehber>
+
+@{
+    ViewBag.Title = "Çalışanlar";
+    Layout = "~/Views/Shared/_AdminUI.cshtml";
+}
+
+
+<p>
+    @Html.ActionLink("Yeni Çalışan", "Create",null,new { @class="btn btn-primary"})
+    <br />
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            <b>Ad Soyad</b>
+        </th>
+        <th>
+            <b>Telefon</b>
+        </th>
+        <th>
+            <b>Departman Adı</b>
+        </th>
+        <th>
+            <b>Yönetici Bilgisi</b>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.adSoyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.departman.departmanAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.yoneticiBilgisi)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id },new { @class="btn btn-warning btn-xs"}) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-xs" })
+        </td>
+    </tr>
+}
+
+</table>

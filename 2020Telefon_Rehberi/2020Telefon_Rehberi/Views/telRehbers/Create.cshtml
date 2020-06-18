@@ -1,0 +1,64 @@
+﻿@model _2020Telefon_Rehberi.Models.telRehber
+
+@{
+    ViewBag.Title = "Çalışan Kayıt";
+    Layout = "~/Views/Shared/_AdminUI.cshtml";
+}
+
+<h2>Yeni Çalışan Ekle</h2>
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <b class="control-label col-md-2">Ad Soyad</b>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.adSoyad, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.adSoyad, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <b class="control-label col-md-2">Telefon (<i style="color:red">*</i> Max11)</b>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.telefon, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.telefon, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <b class="control-label col-md-2">Yönetici Bilgisi</b>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.yoneticiBilgisi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.yoneticiBilgisi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <b class="control-label col-md-2">Departman</b>
+            <div class="col-md-10">
+                @Html.DropDownList("departmanId", null,"Kategori Seçiniz", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.departmanId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Kayıt" class="btn btn-primary" style="width:200px" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-warning btn-xs" })
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

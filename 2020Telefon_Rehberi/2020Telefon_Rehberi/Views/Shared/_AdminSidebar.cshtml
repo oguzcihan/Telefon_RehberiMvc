@@ -1,0 +1,80 @@
+﻿
+<div class="col-xl-3">
+    <!-- MENU SIDEBAR-->
+    <aside class="menu-sidebar3 js-spe-sidebar">
+        <nav class="navbar-sidebar2 navbar-sidebar3">
+            <ul class="list-unstyled navbar__list">
+                <li class="active has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-tachometer-alt"></i>Yönetim
+                        <span class="arrow">
+                            <i class="fas fa-angle-down"></i>
+                        </span>
+                    </a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="/Home/_admin">Yönetim Anasayfa</a>
+                        </li>
+                        <li>
+                            <a href="#">Opsiyonel</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-desktop"></i>Ekleme/Silme
+                        <span class="arrow">
+                            <i class="fas fa-angle-down"></i>
+                        </span>
+                    </a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+
+                            @Html.ActionLink("Yeni Ekle", "Create", "telRehbers")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Listele", "Index", "telRehbers")
+                        </li>
+
+
+                    </ul>
+                </li>
+                <li class="has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-desktop"></i>Departman
+                        <span class="arrow">
+                            <i class="fas fa-angle-down"></i>
+                        </span>
+                    </a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+
+                            @Html.ActionLink("Yeni Ekle", "Create", "Departmen")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Listele", "Index", "Departmen")
+                        </li>
+
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fas fa-chart-bar"></i>İstatistik
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-shopping-basket"></i>opsiyonel
+                    </a>
+                </li>
+
+
+
+            </ul>
+        </nav>
+    </aside>
+    <!-- END MENU SIDEBAR-->
+</div>

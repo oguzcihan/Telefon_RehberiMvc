@@ -1,0 +1,41 @@
+﻿@model _2020Telefon_Rehberi.Models.Departman
+
+@{
+    ViewBag.Title = "Departman Kayıt";
+    Layout = "~/Views/Shared/_AdminUI.cshtml";
+}
+
+<h2>Departman Ekle</h2>
+<hr />
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <b class="control-label col-md-2">Departman Adı</b>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.departmanAdi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.departmanAdi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Kayıt" class="btn btn-primary" style="width:250px" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index",null,new { @class="btn btn-warning"})
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

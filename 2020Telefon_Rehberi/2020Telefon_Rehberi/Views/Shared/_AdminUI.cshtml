@@ -1,0 +1,247 @@
+﻿
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+    <!-- Title Page-->
+    <title>Yönetici Paneli &minus; @ViewBag.Title</title>
+    <!-- Fontfaces CSS-->
+    <link href="~/yonetim/css/font-face.css" rel="stylesheet" media="all">
+    <link href="~/yonetim/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="~/yonetim/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="~/yonetim/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <!-- Bootstrap CSS-->
+    <link href="~/yonetim/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    <!-- Vendor CSS-->
+    <link href="~/yonetim/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="~/yonetim/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="~/yonetim/vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="~/yonetim/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="~/yonetim/vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="~/yonetim/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="~/yonetim/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+    <!-- Main CSS-->
+    <link href="~/yonetim/css/theme.css" rel="stylesheet" media="all">
+</head>
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- HEADER DESKTOP-->
+        <header class="header-desktop4">
+            <div class="container">
+                <div class="header4-wrap">
+                    <div class="header__logo">
+                        <a href="#">
+                            <img src="#" alt="AdminFoto" />
+                        </a>
+                    </div>
+                    <div class="header__tool">
+                        <div class="header-button-item has-noti js-item-menu">
+                            <i class="zmdi zmdi-notifications"></i>
+                            <div class="notifi-dropdown js-dropdown">
+                                <div class="notifi__title">
+                                    <p>Bildirimler</p>
+                                </div>
+                                <div class="notifi__item">
+                                    <div class="bg-c2 img-cir img-40">
+                                        <i class="zmdi zmdi-account-box"></i>
+                                    </div>
+                                    <div class="content">
+                                        <p>deneme</p>
+                                        <span class="date">tarih</span>
+                                    </div>
+                                </div>
+
+                                <div class="notifi__footer">
+                                    <a href="#">Tüm Bildirimler</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header-button-item js-item-menu">
+                            <i class="zmdi zmdi-settings"></i>
+                            <div class="setting-dropdown js-dropdown">
+
+                                <div class="account-dropdown__body">
+                                    <div class="account-dropdown__item">
+                                        <a href="#">
+                                            <i class="zmdi zmdi-globe"></i>deneme
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="account-wrap">
+                            <div class="account-item account-item--style2 clearfix js-item-menu">
+                                <div class="image">
+                                    <img src="#" alt="AdminFoto" />
+                                </div>
+                                <div class="content">
+                                    <a class="js-acc-btn" href="#">Admin</a>
+                                </div>
+                                <div class="account-dropdown js-dropdown">
+                                    <div class="info clearfix">
+                                        <div class="image">
+                                            <a href="#">
+                                                <img src="#" alt="AdminFoto" />
+                                            </a>
+                                        </div>
+                                        <div class="content">
+                                            <h5 class="name">
+                                                <a href="#">Admin</a>
+                                            </h5>
+                                            <span class="email">#</span>
+                                        </div>
+                                    </div>
+                                    <div class="account-dropdown__body">
+                                        <div class="account-dropdown__item">
+                                            <a href="/Home/Index" target="_blank">
+                                                <i class="zmdi zmdi-settings"></i>Anasayfa Önizle
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                    <div class="account-dropdown__footer">
+
+                                        <ul>
+                                            @if (Request.IsAuthenticated)
+                                            {
+                                                //kullanıcı adını logut link
+
+                                                <li class=" my-2 my-lg-0">
+                                                    <a class="nav-link zmdi zmdi-power" href="/Account/Logout"> <b> ÇIKIŞ</b></a>
+                                                </li>
+                                            }
+                                            else
+                                            {
+
+                                                <li class=" my-2 my-lg-0">
+                                                    <a class="nav-link zmdi zmdi-local-activity" href="/Account/Login"></a>
+                                                </li>
+
+                                            }
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- END HEADER DESKTOP -->
+        <!-- WELCOME-->
+        <section class="welcome2 p-t-40 p-b-55">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="au-breadcrumb3">
+                            <div class="au-breadcrumb-left">
+                                <span class="au-breadcrumb-span">Şuan Konum:</span>
+                                <ul class="list-unstyled list-inline au-breadcrumb__list">
+                                    <li class="list-inline-item active">
+                                        <a href="#">Anasayfa</a>
+                                    </li>
+                                    <li class="list-inline-item seprate">
+                                        <span>/</span>
+                                    </li>
+                                    <li class="list-inline-item">Yönetim</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="welcome2-inner m-t-60">
+                            <div class="welcome2-greeting">
+                                <h1 class="title-6">
+                                    Merhaba
+                                    <span>adsoyadgelecek</span>, Tekrar Hoşgeldin...
+                                </h1>
+
+                            </div>
+                            <form class="form-header form-header2" action="" method="post">
+                                <input class="au-input au-input--w435" type="text" name="search" placeholder="Search for datas &amp; reports...">
+                                <button class="au-btn--submit" type="submit">
+                                    <i class="zmdi zmdi-search"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END WELCOME-->
+        <!-- PAGE CONTENT-->
+        <div class="page-container3">
+            <section class="alert-wrap p-t-70 p-b-70">
+                <div class="container">
+                    <!-- ALERT-->
+                    <div class="alert au-alert-success alert-dismissible fade show au-alert au-alert--70per" role="alert">
+                        <i class="zmdi zmdi-check-circle"></i>
+                        <span class="content">Siteniz güncel durumda...</span>
+                        <button class="close" type="button" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">
+                                <i class="zmdi zmdi-close-circle"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <!-- END ALERT-->
+                </div>
+            </section>
+            <section>
+                <div class="container">
+                    <div class="row">
+                        @Html.Partial("_AdminSidebar")
+                        <div class="col-xl-9">
+                            <!-- PAGE CONTENT-->
+                            <div class="page-content">
+                                @RenderBody()
+
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="copyright">
+                                            <p>Copyright © 2020 for Oğuz Cihan Blog Web  <a href="https://oguzcihan.com">Sitesi</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END PAGE CONTENT-->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- END PAGE CONTENT  -->
+    </div>
+    <!-- Jquery JS-->
+    <script src="~/yonetim/vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="~/yonetim/vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="~/yonetim/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="~/yonetim/vendor/slick/slick.min.js">
+    </script>
+    <script src="~/yonetim/vendor/wow/wow.min.js"></script>
+    <script src="~/yonetim/vendor/animsition/animsition.min.js"></script>
+    <script src="~/yonetim/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="~/yonetim/vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="~/yonetim/vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="~/yonetim/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="~/yonetim/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="~/yonetim/vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="~/yonetim/vendor/select2/select2.min.js">
+    </script>
+    <!-- Main JS-->
+    <script src="~/yonetim/js/main.js"></script>
+</body>
+</html>
+<!-- end document-->
